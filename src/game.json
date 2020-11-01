@@ -329,6 +329,13 @@
         "metadata": "",
         "name": "res\\grande_discoteca.mp3",
         "userAdded": false
+      },
+      {
+        "file": "res/game_over.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "res\\game_over.mp3",
+        "userAdded": true
       }
     ],
     "resourceFolders": []

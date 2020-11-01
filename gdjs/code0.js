@@ -113,7 +113,7 @@ gdjs.ScotecaCode.condition1IsTrue_2 = {val:false};
 gdjs.ScotecaCode.condition2IsTrue_2 = {val:false};
 
 
-gdjs.ScotecaCode.mapOfGDgdjs_46ScotecaCode_46GDattiva_9595volumeObjects1Objects = Hashtable.newFrom({"attiva_volume": gdjs.ScotecaCode.GDattiva_95volumeObjects1});gdjs.ScotecaCode.userFunc0x7630b8 = function(runtimeScene) {
+gdjs.ScotecaCode.mapOfGDgdjs_46ScotecaCode_46GDattiva_9595volumeObjects1Objects = Hashtable.newFrom({"attiva_volume": gdjs.ScotecaCode.GDattiva_95volumeObjects1});gdjs.ScotecaCode.userFunc0x7892e0 = function(runtimeScene) {
 "use strict";
 
 window.parent.postMessage('loaded', '*');
@@ -123,7 +123,7 @@ gdjs.ScotecaCode.eventsList0 = function(runtimeScene) {
 {
 
 
-gdjs.ScotecaCode.userFunc0x7630b8(runtimeScene);
+gdjs.ScotecaCode.userFunc0x7892e0(runtimeScene);
 
 }
 
@@ -149,7 +149,7 @@ gdjs.ScotecaCode.condition0IsTrue_0.val = gdjs.evtTools.storage.elementExistsInJ
 gdjs.ScotecaCode.condition0IsTrue_0.val = false;
 {
 {gdjs.ScotecaCode.conditionTrue_1 = gdjs.ScotecaCode.condition0IsTrue_0;
-gdjs.ScotecaCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(7762524);
+gdjs.ScotecaCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(7769180);
 }
 }if (gdjs.ScotecaCode.condition0IsTrue_0.val) {
 gdjs.ScotecaCode.GDattiva_95volumeObjects1.length = 0;
@@ -194,7 +194,7 @@ if( gdjs.ScotecaCode.condition1IsTrue_1.val ) {
 }if ( gdjs.ScotecaCode.condition0IsTrue_0.val ) {
 {
 {gdjs.ScotecaCode.conditionTrue_1 = gdjs.ScotecaCode.condition1IsTrue_0;
-gdjs.ScotecaCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(7767084);
+gdjs.ScotecaCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(7773772);
 }
 }}
 if (gdjs.ScotecaCode.condition1IsTrue_0.val) {
@@ -254,7 +254,7 @@ gdjs.copyArray(runtimeScene.getObjects("barra_sotto"), gdjs.ScotecaCode.GDbarra_
 gdjs.ScotecaCode.condition0IsTrue_0.val = false;
 {
 {gdjs.ScotecaCode.conditionTrue_1 = gdjs.ScotecaCode.condition0IsTrue_0;
-gdjs.ScotecaCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(7776188);
+gdjs.ScotecaCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(7783692);
 }
 }if (gdjs.ScotecaCode.condition0IsTrue_0.val) {
 {runtimeScene.getVariables().getFromIndex(0).setNumber(gdjs.randomInRange(1, 2));
@@ -270,7 +270,7 @@ gdjs.ScotecaCode.condition0IsTrue_0.val = false;
 {
 gdjs.ScotecaCode.condition0IsTrue_0.val = gdjs.evtTools.common.getVariableNumber(runtimeScene.getVariables().getFromIndex(0)) == 1;
 }if (gdjs.ScotecaCode.condition0IsTrue_0.val) {
-{gdjs.evtTools.sound.playSoundOnChannel(runtimeScene, "res\\che_cos_e.mp3", 0, false, 98, 1);
+{gdjs.evtTools.sound.playSoundOnChannel(runtimeScene, "res\\che_cos_e.mp3", 0, false, 100, 1);
 }}
 
 }
@@ -283,7 +283,7 @@ gdjs.ScotecaCode.condition0IsTrue_0.val = false;
 {
 gdjs.ScotecaCode.condition0IsTrue_0.val = gdjs.evtTools.common.getVariableNumber(runtimeScene.getVariables().getFromIndex(0)) == 2;
 }if (gdjs.ScotecaCode.condition0IsTrue_0.val) {
-{gdjs.evtTools.sound.playSoundOnChannel(runtimeScene, "res\\la_scoteca.mp3", 0, false, 98, 1);
+{gdjs.evtTools.sound.playSoundOnChannel(runtimeScene, "res\\la_scoteca.mp3", 0, false, 100, 1);
 }}
 
 }
@@ -395,7 +395,7 @@ gdjs.copyArray(gdjs.ScotecaCode.GDchecoseObjects3_1final, gdjs.ScotecaCode.GDche
 }if ( gdjs.ScotecaCode.condition0IsTrue_0.val ) {
 {
 {gdjs.ScotecaCode.conditionTrue_1 = gdjs.ScotecaCode.condition1IsTrue_0;
-gdjs.ScotecaCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(7781084);
+gdjs.ScotecaCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(7788524);
 }
 }}
 if (gdjs.ScotecaCode.condition1IsTrue_0.val) {
@@ -457,7 +457,7 @@ gdjs.copyArray(gdjs.ScotecaCode.GDlascotecaObjects2_1final, gdjs.ScotecaCode.GDl
 }if ( gdjs.ScotecaCode.condition0IsTrue_0.val ) {
 {
 {gdjs.ScotecaCode.conditionTrue_1 = gdjs.ScotecaCode.condition1IsTrue_0;
-gdjs.ScotecaCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(7784364);
+gdjs.ScotecaCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(7791564);
 }
 }}
 if (gdjs.ScotecaCode.condition1IsTrue_0.val) {
@@ -533,7 +533,7 @@ gdjs.ScotecaCode.condition0IsTrue_0.val = false;
 gdjs.ScotecaCode.condition1IsTrue_0.val = false;
 {
 {gdjs.ScotecaCode.conditionTrue_1 = gdjs.ScotecaCode.condition0IsTrue_0;
-gdjs.ScotecaCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(7772348);
+gdjs.ScotecaCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(7779308);
 }
 }if ( gdjs.ScotecaCode.condition0IsTrue_0.val ) {
 {
@@ -552,10 +552,10 @@ if (gdjs.ScotecaCode.condition1IsTrue_0.val) {
 gdjs.ScotecaCode.condition0IsTrue_0.val = false;
 {
 {gdjs.ScotecaCode.conditionTrue_1 = gdjs.ScotecaCode.condition0IsTrue_0;
-gdjs.ScotecaCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(7753748);
+gdjs.ScotecaCode.conditionTrue_1.val = runtimeScene.getOnceTriggers().triggerOnce(7780252);
 }
 }if (gdjs.ScotecaCode.condition0IsTrue_0.val) {
-{gdjs.evtTools.sound.playSoundOnChannel(runtimeScene, "res\\grande_discoteca.mp3", 0, false, 98, 1);
+{gdjs.evtTools.sound.playSoundOnChannel(runtimeScene, "res\\grande_discoteca.mp3", 0, false, 100, 1);
 }}
 
 }
@@ -729,6 +729,7 @@ gdjs.ScotecaCode.GDbarilecadeObjects1.length = 0;
 gdjs.ScotecaCode.GDominocadeObjects1.length = 0;
 
 {runtimeScene.getVariables().getFromIndex(4).setNumber(0);
+}{gdjs.evtTools.sound.playSoundOnChannel(runtimeScene, "res\\game_over.mp3", 0, false, 100, 1);
 }{gdjs.evtTools.runtimeScene.removeTimer(runtimeScene, "delay");
 }{gdjs.evtTools.object.createObjectOnScene((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : runtimeScene), gdjs.ScotecaCode.mapOfGDgdjs_46ScotecaCode_46GDominocadeObjects1Objects, 0, 187, "");
 }{gdjs.evtTools.object.createObjectOnScene((typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : runtimeScene), gdjs.ScotecaCode.mapOfGDgdjs_46ScotecaCode_46GDbarilecadeObjects1Objects, 0, 343, "");

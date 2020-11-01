@@ -329,6 +329,13 @@
         "metadata": "",
         "name": "res\\grande_discoteca.mp3",
         "userAdded": false
+      },
+      {
+        "file": "res/game_over.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "res\\game_over.mp3",
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -2191,7 +2198,7 @@
                     "res\\grande_discoteca.mp3",
                     "0",
                     "",
-                    "98",
+                    "100",
                     ""
                   ],
                   "subInstructions": []
@@ -2448,7 +2455,7 @@
                         "res\\che_cos_e.mp3",
                         "0",
                         "",
-                        "98",
+                        "100",
                         ""
                       ],
                       "subInstructions": []
@@ -2485,7 +2492,7 @@
                         "res\\la_scoteca.mp3",
                         "0",
                         "100",
-                        "98",
+                        "100",
                         ""
                       ],
                       "subInstructions": []
@@ -3101,6 +3108,21 @@
                     "caduta",
                     "=",
                     "0"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "PlaySoundCanal"
+                  },
+                  "parameters": [
+                    "",
+                    "res\\game_over.mp3",
+                    "0",
+                    "",
+                    "100",
+                    ""
                   ],
                   "subInstructions": []
                 },
