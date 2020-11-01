@@ -1,0 +1,360 @@
+{
+  "firstLayout": "",
+  "gdVersion": {
+    "build": 98,
+    "major": 4,
+    "minor": 0,
+    "revision": 0
+  },
+  "properties": {
+    "adaptGameResolutionAtRuntime": true,
+    "folderProject": true,
+    "linuxExecutableFilename": "",
+    "macExecutableFilename": "",
+    "orientation": "portrait",
+    "packageName": "com.giusreds.lascoteca",
+    "projectFile": "C:\\Users\\Giuseppe\\Desktop\\scoteca-game\\src\\game.json",
+    "scaleMode": "nearest",
+    "sizeOnStartupMode": "",
+    "useExternalSourceFiles": false,
+    "version": "1.0.0",
+    "winExecutableFilename": "",
+    "winExecutableIconFile": "",
+    "name": "La Scoteca",
+    "author": "Giuseppe Rossi",
+    "windowWidth": 360,
+    "windowHeight": 640,
+    "latestCompilationDirectory": "",
+    "maxFPS": 60,
+    "minFPS": 20,
+    "verticalSync": false,
+    "platformSpecificAssets": {},
+    "loadingScreen": {
+      "showGDevelopSplash": true
+    },
+    "extensionProperties": [],
+    "extensions": [
+      {
+        "name": "BuiltinObject"
+      },
+      {
+        "name": "BuiltinAudio"
+      },
+      {
+        "name": "BuiltinVariables"
+      },
+      {
+        "name": "BuiltinTime"
+      },
+      {
+        "name": "BuiltinMouse"
+      },
+      {
+        "name": "BuiltinKeyboard"
+      },
+      {
+        "name": "BuiltinJoystick"
+      },
+      {
+        "name": "BuiltinCamera"
+      },
+      {
+        "name": "BuiltinWindow"
+      },
+      {
+        "name": "BuiltinFile"
+      },
+      {
+        "name": "BuiltinNetwork"
+      },
+      {
+        "name": "BuiltinScene"
+      },
+      {
+        "name": "BuiltinAdvanced"
+      },
+      {
+        "name": "Sprite"
+      },
+      {
+        "name": "BuiltinCommonInstructions"
+      },
+      {
+        "name": "BuiltinCommonConversions"
+      },
+      {
+        "name": "BuiltinStringInstructions"
+      },
+      {
+        "name": "BuiltinMathematicalTools"
+      },
+      {
+        "name": "BuiltinExternalLayouts"
+      }
+    ],
+    "platforms": [
+      {
+        "name": "GDevelop JS platform"
+      }
+    ],
+    "currentPlatform": "GDevelop JS platform"
+  },
+  "resources": {
+    "resources": [
+      {
+        "file": "res/che_cos_e.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "res\\che_cos_e.mp3",
+        "userAdded": true
+      },
+      {
+        "file": "res/la_scoteca.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "res\\la_scoteca.mp3",
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "res/sfondo.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "res\\sfondo.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "res/tettoia.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "res\\tettoia.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "res/barra-sotto.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "res\\barra-sotto.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "res/barra.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "res\\barra.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "file": "res/Jeremy Blake - Powerup!.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "res\\Jeremy Blake - Powerup!.mp3",
+        "userAdded": false
+      },
+      {
+        "file": "res/music_edited.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "res\\music_edited.mp3",
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "res/button1-n.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "res\\button1-n.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "res/button1-p.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "res\\button1-p.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "res/button2-n.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "res\\button2-n.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "res/button2-p.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "res\\button2-p.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "res/balletto/ballerino1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "res\\balletto\\ballerino1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "res/balletto/ballerino2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "res\\balletto\\ballerino2.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "res/balletto/ballerino3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "res\\balletto\\ballerino3.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "res/balletto/ballerino4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "res\\balletto\\ballerino4.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "res/balletto/ballerino5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "res\\balletto\\ballerino5.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "res/balletto/ballerino6.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "res\\balletto\\ballerino6.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "res/balletto/ballerino7.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "res\\balletto\\ballerino7.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "res/font-2.ttf",
+        "kind": "font",
+        "metadata": "",
+        "name": "res\\font-2.ttf",
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "res/caduta/caduta2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "res\\caduta\\caduta2.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "res/caduta/caduta1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "res\\caduta\\caduta1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "res/logo.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "res\\logo.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "res/gameover.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "res\\gameover.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "res/newrecord.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "res\\newrecord.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "file": "res/font-1.ttf",
+        "kind": "font",
+        "metadata": "",
+        "name": "res\\font-1.ttf",
+        "userAdded": true
+      }
+    ],
+    "resourceFolders": []
+  },
+  "objects": [],
+  "objectsGroups": [],
+  "variables": [
+    {
+      "name": "play",
+      "value": "0"
+    },
+    {
+      "name": "score",
+      "value": "0"
+    },
+    {
+      "name": "spaces",
+      "value": "                                                                 "
+    }
+  ],
+  "layouts": [
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/layouts/scoteca"
+    }
+  ],
+  "externalEvents": [],
+  "eventsFunctionsExtensions": [],
+  "externalLayouts": [
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalLayouts/start"
+    }
+  ],
+  "externalSourceFiles": []
+}

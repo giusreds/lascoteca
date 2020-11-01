@@ -1,0 +1,78 @@
+<!-- (c)2020 Giuseppe Rossi -->
+
+<!DOCTYPE HTML>
+<html lang="it">
+
+<head>
+
+    <!-- Proprieta -->
+    <meta charset="UTF-8">
+    <title>La Scoteca</title>
+    <meta name="description" content="Gioco in stile Pixel Art, simpaticamente ispirato a un meme del WEB.">
+    <meta name="keywords" content="Scoteca, Gioco, Game, Arcade, Pixel">
+    <meta name="author" content="Giuseppe Rossi">
+    <meta name="copyright" content="Giuseppe Rossi">
+    <meta name="robots" content="all">
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <!-- Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Stile -->
+    <link rel="stylesheet" href="assets/style.css" type="text/css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XQ3XF5X09D"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-XQ3XF5X09D');
+    </script>
+
+    <!-- PWA Compat -->
+    <script src="https://cdn.jsdelivr.net/npm/pwacompat" crossorigin="anonymous"></script>
+
+    <!-- Registrazione Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            // Path che contiene il service worker
+            navigator.serviceWorker.register('sw.js').then(function (registration) {
+                console.log('Service worker installato correttamente, scope:', registration.scope);
+            }).catch(function (error) {
+                console.log('Installazione service worker fallita:', error);
+            });
+        }
+    </script>
+
+    <!-- Social Media Preview -->
+    <meta property="og:title" content="La Scoteca">
+    <meta property="og:description" content="Gioco in stile Pixel Art, simpaticamente ispirato a un meme del WEB.">
+    <meta property="og:image" content="https://giusreds.github.io/lascoteca/assets/social-preview.png">
+    <meta property="og:url" content="giusreds.github.io/lascoteca">
+    <meta name="twitter:card" content="summary_large_image">
+
+</head>
+
+<body>
+
+    <main class="container">
+        <div class="embed-responsive">
+            <!-- Schermata di caricamento -->
+            <div id="loading">
+                <p>CARICAMENTO...</p>
+            </div>
+            <!-- Gioco -->
+            <iframe src="gdjs/index.html" id="game" title="Gioco" allow="autoplay; fullscreen *; 
+            geolocation; microphone; camera; midi; monetization; xr-spatial-tracking"></iframe>
+        </div>
+    </main>
+
+    <!-- Script -->
+    <script src="assets/jquery-3.5.1.min.js"></script>
+    <script src="assets/script.js"></script>
+
+</body>
+
+</html>
