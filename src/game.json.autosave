@@ -13,7 +13,7 @@
     "macExecutableFilename": "",
     "orientation": "portrait",
     "packageName": "com.giusreds.lascoteca",
-    "projectFile": "C:\\Users\\Giuseppe\\Desktop\\scoteca-game\\src\\game.json",
+    "projectFile": "C:\\Users\\Giuseppe\\Documents\\GitHub\\lascoteca\\src\\game.json",
     "scaleMode": "nearest",
     "sizeOnStartupMode": "",
     "useExternalSourceFiles": false,
@@ -322,6 +322,13 @@
         "metadata": "",
         "name": "res\\font-1.ttf",
         "userAdded": true
+      },
+      {
+        "file": "res/grande_discoteca.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "res\\grande_discoteca.mp3",
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -367,7 +374,7 @@
         "gridWidth": 45,
         "snap": true,
         "windowMask": false,
-        "zoomFactor": 0.43
+        "zoomFactor": 0.79
       },
       "objectsGroups": [],
       "variables": [
@@ -523,7 +530,7 @@
           "persistentUuid": "227f2401-0b0a-43f1-866c-af2a47e4af13",
           "width": 148,
           "x": 15,
-          "y": 524,
+          "y": 519,
           "zOrder": 9,
           "numberProperties": [],
           "stringProperties": [],
@@ -539,7 +546,7 @@
           "persistentUuid": "43727098-c82b-4563-9bfb-3916b2fb3fcc",
           "width": 164,
           "x": 187,
-          "y": 524,
+          "y": 519,
           "zOrder": 10,
           "numberProperties": [],
           "stringProperties": [],
@@ -621,22 +628,6 @@
           "x": 0,
           "y": 23,
           "zOrder": 18,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "height": 45,
-          "layer": "",
-          "locked": false,
-          "name": "attiva_volume",
-          "persistentUuid": "8e9b88fb-8639-437f-a283-5cf8b947953d",
-          "width": 234,
-          "x": 63,
-          "y": 90,
-          "zOrder": 19,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1525,13 +1516,35 @@
           "tags": "",
           "type": "BBText::BBText",
           "variables": [],
+          "behaviors": [
+            {
+              "name": "Tween",
+              "type": "Tween::TweenBehavior"
+            }
+          ],
+          "content": {
+            "text": "[outline=black]Attiva il volume[/outline]",
+            "opacity": 255,
+            "fontSize": 30,
+            "visible": true,
+            "color": "#ffffff",
+            "fontFamily": "res\\font-2.ttf",
+            "align": "center",
+            "wordWrap": true
+          }
+        },
+        {
+          "name": "countdown",
+          "tags": "",
+          "type": "BBText::BBText",
+          "variables": [],
           "behaviors": [],
           "content": {
-            "text": "[outline=white]Alza il volume per poter giocare[/outline]",
+            "text": "[outline=black]3[/outline]",
             "opacity": 255,
-            "fontSize": 20,
+            "fontSize": 50,
             "visible": true,
-            "color": "#000000",
+            "color": "#7ed321",
             "fontFamily": "res\\font-2.ttf",
             "align": "center",
             "wordWrap": true
@@ -1637,11 +1650,14 @@
                 {
                   "type": {
                     "inverted": false,
-                    "value": "Montre"
+                    "value": "Create"
                   },
                   "parameters": [
+                    "",
                     "attiva_volume",
-                    ""
+                    "96",
+                    "528",
+                    "\"\""
                   ],
                   "subInstructions": []
                 }
@@ -1890,59 +1906,6 @@
                 }
               ],
               "events": []
-            },
-            {
-              "disabled": false,
-              "folded": false,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "SourisBouton"
-                  },
-                  "parameters": [
-                    "",
-                    "Left"
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "SourisSurObjet"
-                  },
-                  "parameters": [
-                    "credits",
-                    "",
-                    "no",
-                    ""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "BuiltinCommonInstructions::Once"
-                  },
-                  "parameters": [],
-                  "subInstructions": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "LaunchFile"
-                  },
-                  "parameters": [
-                    "\"https://instagram.com/peppe_rossi\"",
-                    ""
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "events": []
             }
           ]
         },
@@ -2089,10 +2052,11 @@
             {
               "type": {
                 "inverted": false,
-                "value": "Cache"
+                "value": "Delete"
               },
               "parameters": [
-                "attiva_volume"
+                "attiva_volume",
+                ""
               ],
               "subInstructions": []
             },
@@ -2195,6 +2159,39 @@
                     "1",
                     "yes",
                     "100",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": [],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "PlaySoundCanal"
+                  },
+                  "parameters": [
+                    "",
+                    "res\\grande_discoteca.mp3",
+                    "0",
+                    "",
+                    "98",
                     ""
                   ],
                   "subInstructions": []
@@ -2451,7 +2448,7 @@
                         "res\\che_cos_e.mp3",
                         "0",
                         "",
-                        "100",
+                        "98",
                         ""
                       ],
                       "subInstructions": []
@@ -2488,7 +2485,7 @@
                         "res\\la_scoteca.mp3",
                         "0",
                         "100",
-                        "100",
+                        "98",
                         ""
                       ],
                       "subInstructions": []
@@ -3314,7 +3311,7 @@
                         "your_score",
                         "Tween",
                         "\"showYourScore\"",
-                        "377",
+                        "98",
                         "\"easeOutSine\"",
                         "200",
                         ""

@@ -13,7 +13,7 @@
     "macExecutableFilename": "",
     "orientation": "portrait",
     "packageName": "com.giusreds.lascoteca",
-    "projectFile": "C:\\Users\\Giuseppe\\Desktop\\scoteca-game\\src\\game.json",
+    "projectFile": "C:\\Users\\Giuseppe\\Documents\\GitHub\\lascoteca\\src\\game.json",
     "scaleMode": "nearest",
     "sizeOnStartupMode": "",
     "useExternalSourceFiles": false,
@@ -322,6 +322,13 @@
         "metadata": "",
         "name": "res\\font-1.ttf",
         "userAdded": true
+      },
+      {
+        "file": "res/grande_discoteca.mp3",
+        "kind": "audio",
+        "metadata": "",
+        "name": "res\\grande_discoteca.mp3",
+        "userAdded": false
       }
     ],
     "resourceFolders": []
