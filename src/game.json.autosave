@@ -367,7 +367,7 @@
         "gridWidth": 45,
         "snap": true,
         "windowMask": false,
-        "zoomFactor": 0.5248
+        "zoomFactor": 0.43
       },
       "objectsGroups": [],
       "variables": [
@@ -572,7 +572,7 @@
           "width": 270,
           "x": 45,
           "y": 495,
-          "zOrder": 10,
+          "zOrder": 15,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -596,22 +596,6 @@
         {
           "angle": 0,
           "customSize": true,
-          "height": 45,
-          "layer": "",
-          "locked": false,
-          "name": "score_rich",
-          "persistentUuid": "acca6d79-b0db-4ace-af88-beb59b80d689",
-          "width": 360,
-          "x": 0,
-          "y": 675,
-          "zOrder": 16,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
           "height": 21,
           "layer": "",
           "locked": false,
@@ -619,8 +603,40 @@
           "persistentUuid": "fad56c7b-e1a6-482c-95b5-214257cff0cc",
           "width": 359,
           "x": 0,
-          "y": 0,
+          "y": 1,
           "zOrder": 17,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 55,
+          "layer": "",
+          "locked": false,
+          "name": "score_rich",
+          "persistentUuid": "2d65fc42-bb79-4b27-bba0-c9b71a3792eb",
+          "width": 360,
+          "x": 0,
+          "y": 23,
+          "zOrder": 18,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 45,
+          "layer": "",
+          "locked": false,
+          "name": "attiva_volume",
+          "persistentUuid": "8e9b88fb-8639-437f-a283-5cf8b947953d",
+          "width": 234,
+          "x": 63,
+          "y": 90,
+          "zOrder": 19,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -632,11 +648,11 @@
           "layer": "",
           "locked": false,
           "name": "your_score",
-          "persistentUuid": "18b2eca3-36b8-4abe-8032-58b8d044bd72",
+          "persistentUuid": "1f315639-5702-4491-84ad-c847063ebd87",
           "width": 360,
           "x": 0,
-          "y": 90,
-          "zOrder": 10,
+          "y": 765,
+          "zOrder": 20,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -1503,6 +1519,23 @@
             "align": "center",
             "wordWrap": true
           }
+        },
+        {
+          "name": "attiva_volume",
+          "tags": "",
+          "type": "BBText::BBText",
+          "variables": [],
+          "behaviors": [],
+          "content": {
+            "text": "[outline=white]Alza il volume per poter giocare[/outline]",
+            "opacity": 255,
+            "fontSize": 20,
+            "visible": true,
+            "color": "#000000",
+            "fontFamily": "res\\font-2.ttf",
+            "align": "center",
+            "wordWrap": true
+          }
         }
       ],
       "events": [
@@ -1597,6 +1630,17 @@
                     "res\\la_scoteca.mp3",
                     "",
                     "0",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Montre"
+                  },
+                  "parameters": [
+                    "attiva_volume",
                     ""
                   ],
                   "subInstructions": []
@@ -1747,30 +1791,6 @@
                 ""
               ],
               "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "BBText::SetBBText"
-              },
-              "parameters": [
-                "score_type",
-                "=",
-                "\"[outline=black]\" + \"RECORD\" + \"[/outline]\" + NewLine() + GlobalVariableString(spaces)"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "BBText::SetBBText"
-              },
-              "parameters": [
-                "score_rich",
-                "=",
-                "\"[outline=black]\" + ToString(Variable(highscore)) + \"[/outline]\" + NewLine() + GlobalVariableString(spaces)"
-              ],
-              "subInstructions": []
             }
           ],
           "events": [
@@ -1870,8 +1890,107 @@
                 }
               ],
               "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SourisBouton"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SourisSurObjet"
+                  },
+                  "parameters": [
+                    "credits",
+                    "",
+                    "no",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": [],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "LaunchFile"
+                  },
+                  "parameters": [
+                    "\"https://instagram.com/peppe_rossi\"",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
             }
           ]
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "play",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::SetBBText"
+              },
+              "parameters": [
+                "score_type",
+                "=",
+                "\"[outline=black]\" + \"RECORD\" + \"[/outline]\" + NewLine() + GlobalVariableString(spaces)"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BBText::SetBBText"
+              },
+              "parameters": [
+                "score_rich",
+                "=",
+                "\"[outline=black]\" + ToString(Variable(highscore)) + \"[/outline]\" + NewLine() + GlobalVariableString(spaces)"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
         },
         {
           "disabled": false,
@@ -1970,6 +2089,16 @@
             {
               "type": {
                 "inverted": false,
+                "value": "Cache"
+              },
+              "parameters": [
+                "attiva_volume"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
                 "value": "Tween::AddObjectPositionYTween"
               },
               "parameters": [
@@ -1979,7 +2108,7 @@
                 "675",
                 "\"easeOutSine\"",
                 "200",
-                ""
+                "no"
               ],
               "subInstructions": []
             },
@@ -3246,7 +3375,19 @@
                       "parameters": [
                         "play",
                         "=",
-                        "0"
+                        "2"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "BBText::SetBBText"
+                      },
+                      "parameters": [
+                        "score_type",
+                        "=",
+                        "\"[outline=black]\" + \"PUNTEGGIO\" + \"[/outline]\" + NewLine() + GlobalVariableString(spaces)"
                       ],
                       "subInstructions": []
                     },

@@ -12,7 +12,7 @@
   "title": "",
   "v": 98,
   "uiSettings": {
-    "grid": false,
+    "grid": true,
     "gridB": 255,
     "gridG": 180,
     "gridHeight": 45,
@@ -20,9 +20,9 @@
     "gridOffsetY": 0,
     "gridR": 158,
     "gridWidth": 45,
-    "snap": false,
+    "snap": true,
     "windowMask": false,
-    "zoomFactor": 0.79
+    "zoomFactor": 0.43
   },
   "objectsGroups": [],
   "variables": [
@@ -227,7 +227,7 @@
       "width": 270,
       "x": 45,
       "y": 495,
-      "zOrder": 10,
+      "zOrder": 15,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -244,22 +244,6 @@
       "x": 113,
       "y": 621,
       "zOrder": 10,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": true,
-      "height": 45,
-      "layer": "",
-      "locked": false,
-      "name": "score_rich",
-      "persistentUuid": "acca6d79-b0db-4ace-af88-beb59b80d689",
-      "width": 360,
-      "x": 0,
-      "y": 675,
-      "zOrder": 16,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -292,6 +276,38 @@
       "x": 0,
       "y": 23,
       "zOrder": 18,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 45,
+      "layer": "",
+      "locked": false,
+      "name": "attiva_volume",
+      "persistentUuid": "8e9b88fb-8639-437f-a283-5cf8b947953d",
+      "width": 234,
+      "x": 63,
+      "y": 90,
+      "zOrder": 19,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 45,
+      "layer": "",
+      "locked": false,
+      "name": "your_score",
+      "persistentUuid": "1f315639-5702-4491-84ad-c847063ebd87",
+      "width": 360,
+      "x": 0,
+      "y": 765,
+      "zOrder": 20,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -1158,6 +1174,23 @@
         "align": "center",
         "wordWrap": true
       }
+    },
+    {
+      "name": "attiva_volume",
+      "tags": "",
+      "type": "BBText::BBText",
+      "variables": [],
+      "behaviors": [],
+      "content": {
+        "text": "[outline=white]Alza il volume per poter giocare[/outline]",
+        "opacity": 255,
+        "fontSize": 20,
+        "visible": true,
+        "color": "#000000",
+        "fontFamily": "res\\font-2.ttf",
+        "align": "center",
+        "wordWrap": true
+      }
     }
   ],
   "events": [
@@ -1252,6 +1285,17 @@
                 "res\\la_scoteca.mp3",
                 "",
                 "0",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Montre"
+              },
+              "parameters": [
+                "attiva_volume",
                 ""
               ],
               "subInstructions": []
@@ -1402,30 +1446,6 @@
             ""
           ],
           "subInstructions": []
-        },
-        {
-          "type": {
-            "inverted": false,
-            "value": "BBText::SetBBText"
-          },
-          "parameters": [
-            "score_type",
-            "=",
-            "\"[outline=black]\" + \"RECORD\" + \"[/outline]\" + NewLine() + GlobalVariableString(spaces)"
-          ],
-          "subInstructions": []
-        },
-        {
-          "type": {
-            "inverted": false,
-            "value": "BBText::SetBBText"
-          },
-          "parameters": [
-            "score_rich",
-            "=",
-            "\"[outline=black]\" + ToString(Variable(highscore)) + \"[/outline]\" + NewLine() + GlobalVariableString(spaces)"
-          ],
-          "subInstructions": []
         }
       ],
       "events": [
@@ -1541,6 +1561,52 @@
           "parameters": [
             "play",
             "=",
+            "0"
+          ],
+          "subInstructions": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "BBText::SetBBText"
+          },
+          "parameters": [
+            "score_type",
+            "=",
+            "\"[outline=black]\" + \"RECORD\" + \"[/outline]\" + NewLine() + GlobalVariableString(spaces)"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "BBText::SetBBText"
+          },
+          "parameters": [
+            "score_rich",
+            "=",
+            "\"[outline=black]\" + ToString(Variable(highscore)) + \"[/outline]\" + NewLine() + GlobalVariableString(spaces)"
+          ],
+          "subInstructions": []
+        }
+      ],
+      "events": []
+    },
+    {
+      "disabled": false,
+      "folded": false,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "VarGlobal"
+          },
+          "parameters": [
+            "play",
+            "=",
             "1"
           ],
           "subInstructions": []
@@ -1625,6 +1691,16 @@
         {
           "type": {
             "inverted": false,
+            "value": "Cache"
+          },
+          "parameters": [
+            "attiva_volume"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
             "value": "Tween::AddObjectPositionYTween"
           },
           "parameters": [
@@ -1634,7 +1710,7 @@
             "675",
             "\"easeOutSine\"",
             "200",
-            ""
+            "no"
           ],
           "subInstructions": []
         },
@@ -2901,7 +2977,19 @@
                   "parameters": [
                     "play",
                     "=",
-                    "0"
+                    "2"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "BBText::SetBBText"
+                  },
+                  "parameters": [
+                    "score_type",
+                    "=",
+                    "\"[outline=black]\" + \"PUNTEGGIO\" + \"[/outline]\" + NewLine() + GlobalVariableString(spaces)"
                   ],
                   "subInstructions": []
                 },
