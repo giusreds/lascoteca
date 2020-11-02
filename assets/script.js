@@ -7,7 +7,7 @@ var game_url = "https://rebrand.ly/lascoteca-origin";
 
 // Se la pagina e' caricata da GitHub, 
 // carico il gioco dal CDN di itch.io
-$(function () {
+$(document).ready(function () {
     if (window.location.href.includes(gh_url))
         $("#game").attr("src", game_url);
 });
