@@ -16,9 +16,9 @@ $(document).ready(function () {
 window.addEventListener("message", function (event) {
     var message = event.data;
     if (message == "loaded") {
-        $("#transition").fadeIn(200, function() {
+        $("#transition").fadeIn(500, function() {
             $("#loading").hide();
-            $("#transition").fadeOut(200, function() {
+            $("#transition").fadeOut(500, function() {
                 $("game").focus();
             });
         });
