@@ -1,12 +1,19 @@
+<div align="center">
 
-# La Scoteca
+# ![icona](assets/logo.png)
+
+</div>
 
 Gioco in stile Pixel Art, simpaticamente ispirato a un meme del WEB.
 
-&copy; 2020 Giuseppe Rossi
+
+
+## Come si gioca
+
+Bisogna ascoltare la voce della signora e, di volta in volta, premere il tasto corrispondente a ciò che sta dicendo (o ha appena detto).
 
 ***
 
-Progamming and graphics: **Giuseppe Rossi**
+&copy; 2020 Giuseppe Rossi
 
-Music theme: **Jeremy Blake - Powerup!**
+Musica: **Jeremy Blake - Powerup!**
