@@ -16,7 +16,11 @@ $(document).ready(function () {
 window.addEventListener("message", function (event) {
     var message = event.data;
     if (message == "loaded") {
-        $("#loading").fadeOut(200);
-        $("#game").focus();
+        $("#transition").fadeIn(200, function() {
+            $("#loading").hide();
+            $("#transition").fadeOut(200, function() {
+                $("game").focus();
+            });
+        });
     }
 }, false);
