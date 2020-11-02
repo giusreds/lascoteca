@@ -12,12 +12,14 @@
         height: 100vh;
     }
 }
+
 @media (max-aspect-ratio: 703/1250) {
     .embed-responsive {
         width: 100vw;
         height: 177.77vw;
     }
 }
+
 @media (aspect-ratio: 9/16) {
     .embed-responsive {
         width: 100%;
@@ -25,12 +27,11 @@
     }
 }
 
-
 html, body {
     height: 100%;
     margin: 0;
     overflow: hidden;
-    font-family: Pixel;
+    font-family: 'Pixel';
     background-color: black;
     user-select: none;
     -webkit-user-select: none;
