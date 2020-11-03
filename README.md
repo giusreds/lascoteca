@@ -1,6 +1,8 @@
 <div align="center">
 
-# ![icona](assets/logo.png)
+# [**PLAY GAME**](https://rebrand.ly/lascoteca)
+
+# [![icona](assets/logo.png)](#)
 
 </div>
 
