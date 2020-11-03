@@ -10,6 +10,8 @@ var game_url = "https://rebrand.ly/lascoteca-origin";
 $(document).ready(function () {
     if (window.location.href.includes(gh_url))
         $("#game").attr("src", game_url);
+    else
+        $("#game").attr("src", "resources/index.html");
 });
 
 // Il gioco e' stato caricato
