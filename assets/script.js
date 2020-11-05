@@ -14,8 +14,9 @@ $(document).ready(function () {
         $("#game").attr("src", "resources/index.html");
 });
 
-$("#game").load(function () {
-    if(!navigator.onLine)
+// Controllo se si e' offline
+$("#game").ready(function () {
+    if (!navigator.onLine)
         $("#loading").hide();
 });
 
