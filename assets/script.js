@@ -14,13 +14,18 @@ $(document).ready(function () {
         $("#game").attr("src", "resources/index.html");
 });
 
+$("#game").load(function () {
+    if(!navigator.onLine)
+        $("#loading").hide();
+});
+
 // Il gioco e' stato caricato
 window.addEventListener("message", function (event) {
     var message = event.data;
     if (message == "loaded") {
-        $("#transition").fadeIn(500, function() {
+        $("#transition").fadeIn(500, function () {
             $("#loading").hide();
-            $("#transition").fadeOut(500, function() {
+            $("#transition").fadeOut(500, function () {
                 $("game").focus();
             });
         });
