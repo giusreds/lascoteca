@@ -12,18 +12,16 @@ $(document).ready(function () {
     $.ajax({
         url: request_url,
         success: function (data) {
-            Cookies.set('lascoteca-origin', data, { expires: 20, path: '' });
+            Cookies.set('lascoteca-origin', data, { expires: 7, path: '' });
+            if ($("#game").attr("src") == "about:blank")
+                $("#game").attr("src", data);
         }
     });
     // Imposto la sorgente dell'iframe
-    if (window.location.href.includes(gh_url))
-        var retry = setInterval(function () {
-            if (Cookies.get('lascoteca-origin')) {
-                $("#game").attr("src", Cookies.get('lascoteca-origin'));
-                clearInterval(retry);
-            }
-        }, 50);
-    else
+    if (window.location.href.includes(gh_url)) {
+        if (Cookies.get('lascoteca-origin'))
+            $("#game").attr("src", Cookies.get('lascoteca-origin'));
+    } else
         $("#game").attr("src", "resources/index.html");
 });
 
