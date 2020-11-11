@@ -22,7 +22,7 @@ $(document).ready(function () {
                 $("#game").attr("src", Cookies.get('lascoteca-origin'));
                 clearInterval(r);
             }
-        }, 60);
+        }, 120);
     } else
         $("#game").attr("src", "resources/index.html");
 });
