@@ -18,7 +18,7 @@ $(document).ready(function () {
     // Imposto la sorgente dell'iframe
     if (window.location.href.includes(gh_url)) {
         var r = setInterval(function () {
-            if (typeof(Cookies.get('lascoteca-origin')) != "undefined") {
+            if (Cookies.get('lascoteca-origin')) {
                 clearInterval(r);
                 $("#game").attr("src", Cookies.get('lascoteca-origin'));
             }
