@@ -39,18 +39,6 @@
     <!-- PWA Compat -->
     <script src="https://cdn.jsdelivr.net/npm/pwacompat" crossorigin="anonymous"></script>
 
-    <!-- Registrazione Service Worker -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            // Path che contiene il service worker
-            navigator.serviceWorker.register('sw.js').then(function (registration) {
-                console.log('Service worker installato correttamente, scope:', registration.scope);
-            }).catch(function (error) {
-                console.log('Installazione service worker fallita:', error);
-            });
-        }
-    </script>
-
     <!-- Social Media Preview -->
     <meta property="og:title" content="La Scoteca">
     <meta property="og:description" content="Gioco in stile Pixel Art, simpaticamente ispirato a un meme del WEB.">
@@ -79,6 +67,20 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
     <script src="assets/script.js"></script>
+
+    <!-- Registrazione Service Worker -->
+    <script>
+        $(window).on("load", function () {
+            if ('serviceWorker' in navigator) {
+                // Path che contiene il service worker
+                navigator.serviceWorker.register('sw.js').then(function (registration) {
+                    console.log('Service worker installato correttamente, scope:', registration.scope);
+                }).catch(function (error) {
+                    console.log('Installazione service worker fallita:', error);
+                });
+            }
+        });
+    </script>
 
 </body>
 
