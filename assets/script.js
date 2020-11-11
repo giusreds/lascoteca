@@ -18,11 +18,11 @@ $(document).ready(function () {
     // Imposto la sorgente dell'iframe
     if (window.location.href.includes(gh_url)) {
         var r = setInterval(function () {
-            if (Cookies.get('lascoteca-origin')) {
-                $("#game").attr("src", Cookies.get('lascoteca-origin'));
+            if (typeof(Cookies.get('lascoteca-origin')) != "undefined") {
                 clearInterval(r);
+                $("#game").attr("src", Cookies.get('lascoteca-origin'));
             }
-        }, 120);
+        }, 20);
     } else
         $("#game").attr("src", "resources/index.html");
 });
