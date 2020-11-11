@@ -19,7 +19,8 @@ var blackList = [
 	'script.google.com',
 	'countapi.xyz',        // API Contatore
 	'google-analytics',	   // Google Analytics
-	'analytics.google.com'
+	'analytics.google.com',
+	'googletagmanager.com'
 ];
 
 self.addEventListener('install', function (e) {
@@ -85,11 +86,8 @@ self.addEventListener('fetch', function (e) {
 					// Return the cached version
 					return response;
 				}
-
 				// If the request is NOT in the cache, fetch and cache
-
-				var requestClone = e.request.clone();
-				return fetch(requestClone)
+				return fetch(e.request)
 					.then(function (response) {
 
 						if (!response) {
@@ -97,13 +95,11 @@ self.addEventListener('fetch', function (e) {
 							return response;
 						}
 
-						var responseClone = response.clone();
-
 						//  Open the cache
-						caches.open(cacheName).then(function (cache) {
+						return caches.open(cacheName).then(function (cache) {
 
 							// Put the fetched response in the cache
-							cache.put(e.request, responseClone);
+							cache.put(e.request, response.clone());
 							console.log('[ServiceWorker] New Data Cached', e.request.url);
 
 							// Return the response
