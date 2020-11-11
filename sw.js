@@ -2,7 +2,7 @@
 // Service Worker
 
 // Set a name for the current cache
-var cacheName = 'LaScoteca_v1';
+var cacheName = 'giusreds_v1';
 
 // Default files to always cache
 var cacheFiles = [
@@ -64,6 +64,11 @@ self.addEventListener('activate', function (e) {
 
 self.addEventListener('fetch', function (e) {
 	console.log('[ServiceWorker] Fetch', e.request.url);
+	
+	if (e.request.method != 'GET' || isBlackListed(e.request.url)) {
+		console.log("[ServiceWorker] Request not cached", e.request.url);
+		return;
+	}
 
 	// e.respondWidth Responds to the fetch event
 	e.respondWith(
@@ -73,11 +78,6 @@ self.addEventListener('fetch', function (e) {
 
 
 			.then(function (response) {
-
-				if (e.request.method == 'POST' || isBlackListed(e.request.url)) {
-					console.log("[ServiceWorker] Fetched and not Cached", e.request.url);
-					return fetch(e.request);
-				}
 
 				// If the request is in the cache
 				if (response) {

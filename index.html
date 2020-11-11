@@ -18,6 +18,18 @@
     <!-- Manifest -->
     <link rel="manifest" href="manifest.json">
 
+    <!-- Registrazione Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            // Path che contiene il service worker
+            navigator.serviceWorker.register('sw.js').then(function (registration) {
+                console.log('Service worker installato correttamente, scope:', registration.scope);
+            }).catch(function (error) {
+                console.log('Installazione service worker fallita:', error);
+            });
+        }
+    </script>
+
     <!-- Stile -->
     <link rel="stylesheet" href="assets/style.css" type="text/css">
     <link rel="icon" href="assets/icons/favicon.ico">
@@ -67,20 +79,6 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
     <script src="assets/script.js"></script>
-
-    <!-- Registrazione Service Worker -->
-    <script>
-        $(window).on("load", function () {
-            if ('serviceWorker' in navigator) {
-                // Path che contiene il service worker
-                navigator.serviceWorker.register('sw.js').then(function (registration) {
-                    console.log('Service worker installato correttamente, scope:', registration.scope);
-                }).catch(function (error) {
-                    console.log('Installazione service worker fallita:', error);
-                });
-            }
-        });
-    </script>
 
 </body>
 
