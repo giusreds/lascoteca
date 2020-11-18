@@ -28,7 +28,7 @@ $(document).ready(function () {
 });
 
 // Registrazione Service Worker
-$(document).ready(function () {
+$(window).on("load", function () {
     if (window.location.href.includes(gh_url))
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js').then(function (registration) {
@@ -40,14 +40,14 @@ $(document).ready(function () {
 });
 
 // Il gioco e' stato caricato
-window.addEventListener("message", function (event) {
-    var message = event.data;
+$(window).on("message", function (event) {
+    var message = event.originalEvent.data;
     if (message == "loaded") {
         $("#transition").fadeIn(500, function () {
             $("#loading").hide();
             $("#transition").fadeOut(500, function () {
-                $("game").focus();
+                $("#game").focus();
             });
         });
     }
-}, false);
+});
