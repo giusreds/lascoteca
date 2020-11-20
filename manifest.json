@@ -4,42 +4,6 @@
   "description": "Gioco in stile Pixel Art, simpaticamente ispirato a un meme del WEB.",
   "icons": [
     {
-      "src": "assets/icons/32.png",
-      "sizes": "32x32",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "assets/icons/64.png",
-      "sizes": "64x64",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "assets/icons/128.png",
-      "sizes": "128x128",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "assets/icons/256.png",
-      "sizes": "256x256",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "assets/icons/512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "assets/icons/1024.png",
-      "sizes": "1024x1024",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
       "src": "assets/icons/t_32.png",
       "sizes": "32x32",
       "type": "image/png",
@@ -74,6 +38,42 @@
       "sizes": "1024x1024",
       "type": "image/png",
       "purpose": "any"
+    },
+    {
+      "src": "assets/icons/32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/icons/64.png",
+      "sizes": "64x64",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/icons/128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/icons/256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/icons/512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/icons/1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
   "start_url": "index.html",
