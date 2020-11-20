@@ -1,8 +1,8 @@
 <div align="center">
 
-## [**PLAY GAME**](https://rebrand.ly/lascoteca)
+## [**PLAY GAME**](https://kutt.it/lascoteca)
 
-# [![icona](assets/logo.png)](#)
+# [![icona](assets/logo.png)](https://kutt.it/lascoteca)
 
 </div>
 
