@@ -6,14 +6,14 @@ var cacheName = 'giusreds_v1';
 
 // Default files to always cache
 var cacheFiles = [
-	'./index.html',
-	'./manifest.json',
-	'./assets/font.ttf',
-	'./assets/style.css',
-	'./assets/script.js',
-	'./assets/pwacompat-mod.min.js', // Custom PWACompat Library
-	'https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js',   // jQuery
-	'https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js' // Cookie JS
+	'index.html',
+	'manifest.json',
+	'assets/font.ttf',
+	'assets/style.css',
+	'assets/script.js',
+	'https://cdn.jsdelivr.net/gh/giusreds/pwadapter@main/pwadapter.min.js', // PWAdapter
+	'https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js',   		// jQuery
+	'https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js' 		// Cookie JS
 ];
 // Not to be cached
 var blackList = [
