@@ -11,7 +11,7 @@ var cacheFiles = [
 	'./assets/font.ttf',
 	'./assets/style.css',
 	'./assets/script.js',
-	'./assets/pwacompat-mod.js',
+	'./assets/pwacompat-mod.min.js', // Custom PWACompat Library
 	'https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js',   // jQuery
 	'https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js' // Cookie JS
 ];
