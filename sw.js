@@ -11,9 +11,9 @@ var cacheFiles = [
 	'./assets/font.ttf',
 	'./assets/style.css',
 	'./assets/script.js',
+	'./assets/pwacompat-mod.js',
 	'https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js',   // jQuery
-	'https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js', // Cookie JS
-	'https://cdn.jsdelivr.net/npm/pwacompat' //PWACompat
+	'https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js' // Cookie JS
 ];
 // Not to be cached
 var blackList = [
