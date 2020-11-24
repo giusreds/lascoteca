@@ -11,7 +11,7 @@ var cacheFiles = [
 	'assets/font.ttf',
 	'assets/style.css',
 	'assets/script.js',
-	'https://cdn.jsdelivr.net/gh/giusreds/pwadapter@rc/pwadapter.min.js',   // PWAdapter
+	'https://cdn.jsdelivr.net/gh/giusreds/pwadapter@dist/pwadapter.min.js',   // PWAdapter
 	'https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js',   	 // jQuery
 	'https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js' 	 // Cookie JS
 ];
