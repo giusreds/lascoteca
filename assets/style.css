@@ -1,5 +1,8 @@
 /* (c)2020 Giuseppe Rossi */
-
+:root {
+    --vh: 100%;
+    --vw: 100%;
+}
 @font-face {
     font-family: Pixel;
     src: url(font.ttf);
@@ -36,8 +39,8 @@ html, body {
     -webkit-user-select: none;
     -webkit-touch-callout: none;
     -webkit-tap-highlight-color: transparent;
-    width: 100%;
-    height: 100%;
+    width: var(--vw);
+    height: var(--vh);
 }
 
 @media (display-mode: fullscreen), (display-mode: standalone) {

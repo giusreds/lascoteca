@@ -51,3 +51,13 @@ $(window).on("message", function (event) {
         });
     }
 });
+
+// Set body size
+function setSize() {
+    let vw = $(window).width();
+    let vh = $(window).height();
+    $("body").css("--vw", vw + "px");
+    $("body").css("--vh", vh + "px");
+}
+$(document).ready(setSize);
+$(window).resize(setSize);
