@@ -54,8 +54,8 @@ $(window).on("message", function (event) {
 
 // Set body size
 function setSize() {
-    let vw = $(window).width();
-    let vh = $(window).height();
+    let vw = document.documentElement.clientWidth;
+    let vh = document.documentElement.clientHeight;
     $("body").css("--vw", vw + "px");
     $("body").css("--vh", vh + "px");
 }
