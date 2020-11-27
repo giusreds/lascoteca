@@ -54,11 +54,12 @@ $(window).on("message", function (event) {
 
 // Adatta la finestra di gioco
 function setSize() {
+    if (navigator.standalone === true) return;
     var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
     var iw = (iOS) ? document.documentElement.clientWidth : window.innerWidth;
     var ih = (iOS) ? document.documentElement.clientHeight : window.innerHeight;
-    $('body').css('--vw', iw/100 + 'px');
-    $('body').css('--vh', ih/100 + 'px');
+    $('body').css('--vw', iw / 100 + 'px');
+    $('body').css('--vh', ih / 100 + 'px');
 }
 $(document).ready(setSize);
 $(window).resize(setSize);
