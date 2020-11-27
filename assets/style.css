@@ -1,5 +1,9 @@
 /* (c)2020 Giuseppe Rossi */
 
+:root {
+    --vw: 1vw;
+    --vh: 1vh;
+}
 @font-face {
     font-family: Pixel;
     src: url(font.ttf);
@@ -8,15 +12,15 @@
 
 @media (min-aspect-ratio: 2813/5000) {
     .embed-responsive {
-        width: 56.25vh;
-        height: 100vh;
+        width: calc(var(--vh) * 56.25);
+        height: calc(var(--vh) * 100);
     }
 }
 
 @media (max-aspect-ratio: 703/1250) {
     .embed-responsive {
-        width: 100vw;
-        height: 177.77vw;
+        width: calc(var(--vw) * 100);
+        height: calc(var(--vw) * 177.77);
     }
 }
 

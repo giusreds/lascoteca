@@ -51,3 +51,14 @@ $(window).on("message", function (event) {
         });
     }
 });
+
+// Adatta la finestra di gioco
+function setSize() {
+    var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    var iw = (iOS) ? screen.width : window.innerWidth;
+    var ih = (iOS) ? screen.height : window.innerHeight;
+    $('body').css('--vw', iw/100 + 'px');
+    $('body').css('--vh', ih/100 + 'px');
+}
+$(document).ready(setSize);
+$(window).resize(setSize);
