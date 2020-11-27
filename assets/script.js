@@ -32,8 +32,8 @@ $(document).ready(function () {
 // Registrazione Service Worker
 $(window).on("load", function () {
     if (window.location.href.includes(gh_url))
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js').then(function (registration) {
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("./sw.js").then(function (registration) {
                 console.log("Service worker installato correttamente, scope: ", registration.scope);
             }).catch(function (error) {
                 console.log("Installazione service worker fallita: ", error);
@@ -63,7 +63,7 @@ function gameLoad() {
     });
 }
 
-//Gestisce gli eventi
+// Gestisce gli eventi
 $(window).on("message", function (event) {
     try {
         var msg = JSON.parse(event.originalEvent.data);
