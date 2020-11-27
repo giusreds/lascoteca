@@ -37,9 +37,8 @@ html, body {
     -webkit-touch-callout: none;
     -webkit-tap-highlight-color: transparent;
     width: 100%;
-    width: -webkit-fill-available;
     height: 100%;
-    height: -webkit-fill-available;
+    width: -webkit-fill-available;
 }
 
 @media (display-mode: fullscreen), (display-mode: standalone) {
