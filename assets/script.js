@@ -1,11 +1,11 @@
 // (c)2020 Giuseppe Rossi
 
 // URL GitHub
-const gh_url = "giusreds.github.io";
+var gh_url = "giusreds.github.io";
 // URL Richiesta
-const request_url = "https://script.google.com/macros/s/AKfycbydUKEi_amor9ytSXoAN_zki_zaD3n16PdGirMVoEicekCUnC0x/exec";
+var request_url = "https://script.google.com/macros/s/AKfycbydUKEi_amor9ytSXoAN_zki_zaD3n16PdGirMVoEicekCUnC0x/exec";
 // Nome Storage
-const storage_name = "LaScoteca_token";
+var storage_name = "LaScoteca_token";
 
 // Se la pagina e' caricata da GitHub, 
 // carico il gioco dal CDN di itch.io
@@ -41,16 +41,6 @@ $(window).on("load", function () {
         }
 });
 
-// Il gioco e' stato caricato
-function gameLoad() {
-    $("#transition").fadeIn(500, function () {
-        $("#loading").hide();
-        $("#transition").fadeOut(500, function () {
-            $("#game").focus();
-        });
-    });
-}
-
 // Adatta la finestra di gioco
 function setSize() {
     if (navigator.standalone === true) return;
@@ -63,23 +53,33 @@ function setSize() {
 $(document).ready(setSize);
 $(window).resize(setSize);
 
+// Il gioco e' stato caricato
+function gameLoad() {
+    $("#transition").fadeIn(500, function () {
+        $("#loading").hide();
+        $("#transition").fadeOut(500, function () {
+            $("#game").focus();
+        });
+    });
+}
+
 //Gestisce gli eventi
 $(window).on("message", function (event) {
     try {
         var msg = JSON.parse(event.originalEvent.data);
-    } catch(e) {
+    } catch (e) {
         return;
     }
     switch (msg.name) {
         case "loaded":
             gameLoad();
-        break;
+            break;
         case "setStorage":
             localStorage.setItem(storage_name, msg.value);
-        break;
+            break;
         case "clearStorage":
             localStorage.removeItem(storage_name);
-        break;
+            break;
         case "getStorage":
             var str = localStorage.getItem(storage_name);
             var r = {
@@ -87,6 +87,7 @@ $(window).on("message", function (event) {
                 "value": str
             };
             $("#game")[0].contentWindow.postMessage(JSON.stringify(r), "*");
-        break;
+            break;
+        default: return;
     }
 });
