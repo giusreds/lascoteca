@@ -1,9 +1,11 @@
 // (c)2020 Giuseppe Rossi
 
 // URL GitHub
-var gh_url = "giusreds.github.io";
+const gh_url = "giusreds.github.io";
 // URL Richiesta
-var request_url = "https://script.google.com/macros/s/AKfycbydUKEi_amor9ytSXoAN_zki_zaD3n16PdGirMVoEicekCUnC0x/exec";
+const request_url = "https://script.google.com/macros/s/AKfycbydUKEi_amor9ytSXoAN_zki_zaD3n16PdGirMVoEicekCUnC0x/exec";
+// Nome Storage
+const storage_name = "LaScoteca_token";
 
 // Se la pagina e' caricata da GitHub, 
 // carico il gioco dal CDN di itch.io
@@ -12,15 +14,15 @@ $(document).ready(function () {
     $.ajax({
         url: request_url + "?goto=lascoteca-origin",
         success: function (data) {
-            Cookies.set('lascoteca-origin', data, { expires: 7, path: '' });
+            Cookies.set("lascoteca-origin", data, { expires: 7, path: '' });
         }
     });
     // Imposto la sorgente dell'iframe
     if (window.location.href.includes(gh_url)) {
         var r = setInterval(function () {
-            if (Cookies.get('lascoteca-origin')) {
+            if (Cookies.get("lascoteca-origin")) {
                 clearInterval(r);
-                $("#game").attr("src", Cookies.get('lascoteca-origin'));
+                $("#game").attr("src", Cookies.get("lascoteca-origin"));
             }
         }, 20);
     } else
@@ -30,27 +32,24 @@ $(document).ready(function () {
 // Registrazione Service Worker
 $(window).on("load", function () {
     if (window.location.href.includes(gh_url))
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('./sw.js').then(function (registration) {
-                console.log('Service worker installato correttamente, scope:', registration.scope);
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("./sw.js").then(function (registration) {
+                console.log("Service worker installato correttamente, scope:", registration.scope);
             }).catch(function (error) {
-                console.log('Installazione service worker fallita:', error);
+                console.log("Installazione service worker fallita:", error);
             });
         }
 });
 
 // Il gioco e' stato caricato
-$(window).on("message", function (event) {
-    var message = event.originalEvent.data;
-    if (message == "loaded") {
-        $("#transition").fadeIn(500, function () {
-            $("#loading").hide();
-            $("#transition").fadeOut(500, function () {
-                $("#game").focus();
-            });
+function gameLoad() {
+    $("#transition").fadeIn(500, function () {
+        $("#loading").hide();
+        $("#transition").fadeOut(500, function () {
+            $("#game").focus();
         });
-    }
-});
+    });
+}
 
 // Adatta la finestra di gioco
 function setSize() {
@@ -58,8 +57,36 @@ function setSize() {
     var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
     var iw = (iOS) ? document.documentElement.clientWidth : window.innerWidth;
     var ih = (iOS) ? document.documentElement.clientHeight : window.innerHeight;
-    $('body').css('--vw', iw / 100 + 'px');
-    $('body').css('--vh', ih / 100 + 'px');
+    $("body").css("--vw", iw / 100 + "px");
+    $("body").css("--vh", ih / 100 + "px");
 }
 $(document).ready(setSize);
 $(window).resize(setSize);
+
+//Gestisce gli eventi
+$(window).on("message", function (event) {
+    try {
+        var msg = JSON.parse(event.originalEvent.data);
+    } catch(e) {
+        return;
+    }
+    switch (msg.name) {
+        case "loaded":
+            gameLoad();
+        break;
+        case "setStorage":
+            localStorage.setItem(storage_name, msg.value);
+        break;
+        case "clearStorage":
+            localStorage.removeItem(storage_name);
+        break;
+        case "getStorage":
+            var str = localStorage.getItem(storage_name);
+            var r = {
+                "name": "storage",
+                "value": str
+            };
+            $("#game")[0].contentWindow.postMessage(JSON.stringify(r), "*");
+        break;
+    }
+});
