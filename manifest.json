@@ -76,7 +76,7 @@
       "purpose": "maskable"
     }
   ],
-  "starurl": "index.html",
+  "start_url": "index.html",
   "display": "fullscreen",
   "orientation": "portrait",
   "theme_color": "#282C3C",
