@@ -37,7 +37,6 @@ function setSource() {
     });
 }
 
-
 // Registrazione Service Worker
 $(window).on("load", function () {
     if (window.location.href.includes(gh_url))
