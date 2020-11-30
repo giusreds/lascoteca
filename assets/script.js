@@ -21,17 +21,16 @@ $(document).ready(function () {
 
 function setSource() {
     return new Promise((resolve) => {
+        // Ottengo l'URL del gioco e lo memorizzo in un cookie
+        $.ajax({
+            url: request_url + "?goto=lascoteca-origin",
+            success: function (data) {
+                Cookies.set("lascoteca-origin", data, { expires: 7, path: '' });
+                resolve(data);
+            }
+        });
         if (Cookies.get("lascoteca-origin"))
             resolve(Cookies.get("lascoteca-origin"));
-        else
-            // Ottengo l'URL del gioco e lo memorizzo in un cookie
-            $.ajax({
-                url: request_url + "?goto=lascoteca-origin",
-                success: function (data) {
-                    Cookies.set("lascoteca-origin", data, { expires: 7, path: '' });
-                    resolve(data);
-                }
-            });
     });
 }
 
