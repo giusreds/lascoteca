@@ -27,13 +27,10 @@ function setSource() {
             success: function (data) {
                 Cookies.set("lascoteca-origin", data, { expires: 7, path: '' });
                 resolve(data);
-            },
-            error: function () {
-                if (Cookies.get("lascoteca-origin"))
-                    resolve(Cookies.get("lascoteca-origin"));
-            },
-            timeout: 8000
+            }
         });
+        if (Cookies.get("lascoteca-origin"))
+            resolve(Cookies.get("lascoteca-origin"));
     });
 }
 
