@@ -1,33 +1,40 @@
 // (c)2020 Giuseppe Rossi
 
 // URL GitHub
-var gh_url = "giusreds.github.io";
+const gh_url = "giusreds.github.io";
 // URL Richiesta
-var request_url = "https://script.google.com/macros/s/AKfycbydUKEi_amor9ytSXoAN_zki_zaD3n16PdGirMVoEicekCUnC0x/exec";
+const request_url = "https://script.google.com/macros/s/AKfycbydUKEi_amor9ytSXoAN_zki_zaD3n16PdGirMVoEicekCUnC0x/exec";
 // Nome Storage
-var storage_name = "LaScoteca_token";
+const storage_name = "LaScoteca_token";
 
 // Se la pagina e' caricata da GitHub, 
 // carico il gioco dal CDN di itch.io
 $(document).ready(function () {
-    // Ottengo l'URL del gioco e lo memorizzo in un cookie
-    $.ajax({
-        url: request_url + "?goto=lascoteca-origin",
-        success: function (data) {
-            Cookies.set("lascoteca-origin", data, { expires: 7, path: '' });
-        }
-    });
     // Imposto la sorgente dell'iframe
     if (window.location.href.includes(gh_url)) {
-        var r = setInterval(function () {
-            if (Cookies.get("lascoteca-origin")) {
-                clearInterval(r);
-                $("#game").attr("src", Cookies.get("lascoteca-origin"));
-            }
-        }, 20);
+        setSource().then((ifrSrc) => {
+            $("#game").attr("src", ifrSrc);
+        });
     } else
         $("#game").attr("src", "./resources/index.html");
 });
+
+function setSource() {
+    return new Promise((resolve) => {
+        if (Cookies.get("lascoteca-origin"))
+            resolve(Cookies.get("lascoteca-origin"));
+        else
+            // Ottengo l'URL del gioco e lo memorizzo in un cookie
+            $.ajax({
+                url: request_url + "?goto=lascoteca-origin",
+                success: function (data) {
+                    Cookies.set("lascoteca-origin", data, { expires: 7, path: '' });
+                    resolve(data);
+                }
+            });
+    });
+}
+
 
 // Registrazione Service Worker
 $(window).on("load", function () {
@@ -71,9 +78,7 @@ $(window).on("message", function (event) {
         return;
     }
     switch (msg.name) {
-        case "loaded":
-            gameLoad();
-            break;
+        case "loaded": gameLoad(); break;
         case "setStorage":
             localStorage.setItem(storage_name, msg.value);
             break;
