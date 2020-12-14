@@ -2,7 +2,8 @@
 // Service Worker
 
 // Set a name for the current cache
-var cacheName = 'giusreds_v1';
+const cacheName = 'lascoteca';
+const cacheVersion = 1;
 
 // Default files to always cache
 var cacheFiles = [
@@ -11,9 +12,9 @@ var cacheFiles = [
 	'assets/font.ttf',
 	'assets/style.css',
 	'assets/script.js',
-	'https://cdn.jsdelivr.net/gh/giusreds/pwadapter@dist/pwadapter.min.js',   // PWAdapter
-	'https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js',   	 // jQuery
-	'https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js' 	 // Cookie JS
+	'https://cdn.jsdelivr.net/gh/giusreds/pwadapter@dist/pwadapter.min.js', // PWAdapter
+	'https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js',   		// jQuery
+	'https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js' 		// Cookie JS
 ];
 // Not to be cached
 var blackList = [
@@ -24,6 +25,8 @@ var blackList = [
 	'googletagmanager.com'
 ];
 
+
+var _cache = cacheName + "_v" + cacheVersion.toString();
 self.addEventListener('install', function (e) {
 	console.log('[ServiceWorker] Installed');
 
@@ -31,7 +34,7 @@ self.addEventListener('install', function (e) {
 	e.waitUntil(
 
 		// Open the cache
-		caches.open(cacheName).then(function (cache) {
+		caches.open(_cache).then(function (cache) {
 
 			// Add all the default files to the cache
 			console.log('[ServiceWorker] Caching cacheFiles');
@@ -51,7 +54,7 @@ self.addEventListener('activate', function (e) {
 			return Promise.all(cacheNames.map(function (thisCacheName) {
 
 				// If a cached item is saved under a previous cacheName
-				if (thisCacheName !== cacheName) {
+				if (thisCacheName.includes(cacheName) && thisCacheName != _cache) {
 
 					// Delete that cached file
 					console.log('[ServiceWorker] Removing Cached Files from Cache - ', thisCacheName);
@@ -97,7 +100,7 @@ self.addEventListener('fetch', function (e) {
 						}
 
 						//  Open the cache
-						return caches.open(cacheName).then(function (cache) {
+						return caches.open(_cache).then(function (cache) {
 
 							// Put the fetched response in the cache
 							cache.put(e.request, response.clone());

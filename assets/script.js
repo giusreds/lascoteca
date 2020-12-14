@@ -10,13 +10,14 @@ const storage_name = "LaScoteca_token";
 // Se la pagina e' caricata da GitHub, 
 // carico il gioco dal CDN di itch.io
 $(document).ready(function () {
+    var gamePath = "resources/game/index.html";
     // Imposto la sorgente dell'iframe
     if (window.location.href.includes(gh_url)) {
         setSource().then((ifrSrc) => {
-            $("#game").attr("src", ifrSrc);
+            $("#game").attr("src", ifrSrc.replace('index.html', gamePath));
         });
     } else
-        $("#game").attr("src", "./resources/index.html");
+        $("#game").attr("src", gamePath);
 });
 
 function setSource() {
