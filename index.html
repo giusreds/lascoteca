@@ -47,15 +47,14 @@
 <body>
 
     <main class="container">
+        <!-- Schermata di caricamento -->
+        <div id="transition"></div>
+        <div id="loading">
+            <p>CARICAMENTO...</p>
+        </div>
         <div class="embed-responsive">
-            <!-- Schermata di caricamento -->
-            <div id="transition"></div>
-            <div id="loading">
-                <p>CARICAMENTO...</p>
-            </div>
             <!-- Gioco -->
-            <iframe src="about:blank" id="game" title="Gioco" allow="autoplay; fullscreen *; 
-            geolocation; microphone; camera; midi; monetization; xr-spatial-tracking"></iframe>
+            <iframe src="about:blank" id="game" title="Gioco"></iframe>
         </div>
     </main>
 
@@ -63,7 +62,7 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
     <script src="./assets/script.js"></script>
-    
+
     <!-- PWAdapter -->
     <script async src="https://cdn.jsdelivr.net/gh/giusreds/pwadapter@dist/pwadapter.min.js"></script>
 
