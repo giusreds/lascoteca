@@ -15,23 +15,30 @@ $(document).ready(function () {
     if (window.location.href.includes(gh_url)) {
         setSource().then((ifrSrc) => {
             $("#game").attr("src", ifrSrc.replace('index.html', gamePath));
+        }, () => {
+            location.reload();
         });
     } else
         $("#game").attr("src", gamePath);
 });
 
 function setSource() {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
         // Ottengo l'URL del gioco e lo memorizzo in un cookie
         $.ajax({
             url: request_url + "?goto=lascoteca-origin",
             success: function (data) {
-                Cookies.set("lascoteca-origin", data, { expires: 7, path: '' });
+                Cookies.set("lascoteca-origin", data, { expires: 120, path: '' });
                 resolve(data);
+            },
+            error: function () {
+                var cookieUrl = Cookies.get("lascoteca-origin");
+                if (cookieUrl)
+                    resolve(cookieUrl);
+                else
+                    reject();
             }
         });
-        if (Cookies.get("lascoteca-origin"))
-            resolve(Cookies.get("lascoteca-origin"));
     });
 }
 
@@ -69,6 +76,7 @@ function gameLoad() {
     });
 }
 
+var tempStorage = null;
 // Gestisce gli eventi
 $(window).on("message", function (event) {
     try {
@@ -79,19 +87,38 @@ $(window).on("message", function (event) {
     switch (msg.name) {
         case "loaded": gameLoad(); break;
         case "setStorage":
+            tempStorage = msg.value;
             localStorage.setItem(storage_name, msg.value);
             break;
         case "clearStorage":
+            tempStorage = null;
             localStorage.removeItem(storage_name);
             break;
         case "getStorage":
-            var str = localStorage.getItem(storage_name);
             var r = {
                 "name": "storage",
-                "value": str
+                "value": tempStorage
             };
             $("#game")[0].contentWindow.postMessage(JSON.stringify(r), "*");
             break;
         default: return;
     }
+});
+// Read localStorage on startup
+$(document).ready(function() {
+    try {
+        tempStorage = localStorage.getItem(storage_name);
+    } catch(e) {
+        console.log(e);
+        tempStorage = null;
+    }
+});
+$(window).on("unload", function () {
+    if (document.readyState == "complete")
+        try {
+            if (tempStorage)
+                localStorage.setItem(storage_name, tempStorage);
+            else
+                localStorage.removeItem(storage_name);
+        } catch (e) { }
 });

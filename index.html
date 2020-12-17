@@ -13,7 +13,7 @@
     <meta name="author" content="Giuseppe Rossi">
     <meta name="copyright" content="Giuseppe Rossi">
     <meta name="robots" content="all">
-    <meta name="viewport" content="viewport-fit=cover, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="viewport-fit=contain, initial-scale=1.0, user-scalable=no">
 
     <!-- Manifest -->
     <link rel="manifest" href="./manifest.json">
@@ -47,12 +47,12 @@
 <body>
 
     <main class="container">
-        <!-- Schermata di caricamento -->
-        <div id="transition"></div>
-        <div id="loading">
-            <p>CARICAMENTO...</p>
-        </div>
         <div class="embed-responsive">
+            <!-- Schermata di caricamento -->
+            <div id="transition"></div>
+            <div id="loading">
+                <p>CARICAMENTO...</p>
+            </div>
             <!-- Gioco -->
             <iframe src="about:blank" id="game" title="Gioco"></iframe>
         </div>
