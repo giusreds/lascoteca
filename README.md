@@ -2,7 +2,7 @@
 
 ## [**PLAY GAME**](https://kutt.it/lascoteca)
 
-# [![icona](assets/logo.png)](https://kutt.it/lascoteca)
+# [![icona](logo.png)](https://kutt.it/lascoteca)
 
 </div>
 
